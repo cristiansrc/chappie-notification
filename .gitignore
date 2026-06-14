@@ -1,0 +1,38 @@
+# Chappie Notification - Git Ignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# Temp
+*.tmp
+*.bak
+*~
+
+# Config local
+config/config.local.yaml
+
+# RabbitMQ data local (montado por docker)
+data/
+
+# Env local
+.env
+.env.local
