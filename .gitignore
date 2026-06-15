@@ -12,6 +12,11 @@ build/
 venv/
 env/
 
+# Testing / Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
 # OS
 .DS_Store
 Thumbs.db
