@@ -14,7 +14,7 @@ class AppConfig(BaseSettings):
     """
 
     # RabbitMQ
-    rabbitmq_url: str = "amqp://guest:guest@localhost:5672/"
+    rabbitmq_url: str = "amqp://chappie:chappie2026@localhost:5672/"
 
     # chappie-daemon
     daemon_base_url: str = "http://localhost:8765"
