@@ -1,0 +1,33 @@
+[Unit]
+Description=Chappie Notification Daemon
+Documentation=https://github.com/chappie-ai/chappie-notification
+After=network.target chappie-infra.service
+
+[Service]
+Type=simple
+User=cris
+WorkingDirectory=/home/cris/chappie-notification
+ExecStart=/home/cris/.local/bin/uv run python -m chappie_notification
+Restart=always
+RestartSec=10
+Environment=CHAPPIE_RABBITMQ_URL=amqp://guest:guest@localhost:5672/
+Environment=CHAPPIE_DAEMON_BASE_URL=http://localhost:8765
+Environment=CHAPPIE_N8N_BASE_URL=http://localhost:5678
+Environment=CHAPPIE_N8N_WEBHOOK_SECRET=
+Environment=CHAPPIE_TTS_VOICE=es-AR-ElenaNeural
+Environment=CHAPPIE_TTS_OUTPUT_PATH=/tmp/chappie_tts.mp3
+Environment=CHAPPIE_TTS_TEXT_PATH=/tmp/chappie_tts_text.txt
+Environment=CHAPPIE_WHITELIST_PATH=./config/commands-whitelist.yaml
+Environment=CHAPPIE_AGENT_TIMEOUT=120
+Environment=CHAPPIE_COMMAND_TIMEOUT=30
+Environment=CHAPPIE_HTTP_TIMEOUT=10
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/tmp
+
+[Install]
+WantedBy=default.target

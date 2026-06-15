@@ -1,6 +1,6 @@
 # Master Spec - chappie-notification
 
-**Lifecycle Status:** `awaiting-human-plan-approval`  
+**Lifecycle Status:** `Active`  
 **Owner:** Planner  
 **Project Path:** `projects/chappie-notification/`  
 **Created:** 2026-06-14  

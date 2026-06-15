@@ -1,0 +1,110 @@
+# commands-whitelist.yaml
+# Patrones de comandos permitidos y denegados para ejecución en terminal.
+# Los patrones usan coincidencia glob/fnmatch.
+# Los comandos denegados tienen prioridad sobre los permitidos.
+
+allowed_commands:
+  # Sistema y servicios
+  - "systemctl *"
+  - "journalctl *"
+  - "systemd-analyze *"
+
+  # Gestión de archivos y directorios
+  - "ls *"
+  - "cat *"
+  - "less *"
+  - "more *"
+  - "head *"
+  - "tail *"
+  - "wc *"
+  - "find *"
+  - "grep *"
+  - "rg *"
+  - "diff *"
+
+  # Información del sistema
+  - "ps *"
+  - "top *"
+  - "htop *"
+  - "df *"
+  - "du *"
+  - "free *"
+  - "uname *"
+  - "uptime"
+  - "who *"
+  - "id"
+  - "date *"
+  - "cal"
+
+  # Red
+  - "ip *"
+  - "ss *"
+  - "netstat *"
+  - "ping *"
+  - "curl *"
+  - "wget *"
+  - "nslookup *"
+  - "dig *"
+
+  # Git
+  - "git *"
+
+  # Docker / Podman
+  - "docker *"
+  - "podman *"
+
+  # Python / Node / JS
+  - "python* *"
+  - "pip *"
+  - "node *"
+  - "npm *"
+  - "npx *"
+  - "uv *"
+
+  # Utilidades
+  - "echo *"
+  - "printf *"
+  - "which *"
+  - "type *"
+  - "file *"
+  - "stat *"
+  - "readlink *"
+
+denied_commands:
+  # Peligrosos
+  - "rm *"
+  - "rm -rf *"
+  - "rm -rf /*"
+  - "dd *"
+  - "mkfs*"
+  - "fdisk *"
+  - "parted *"
+  - "shutdown *"
+  - "reboot *"
+  - "poweroff *"
+  - "halt *"
+  - "init *"
+
+  # Modificación de sistema
+  - "chmod *"
+  - "chown *"
+  - "passwd *"
+  - "usermod *"
+  - "groupmod *"
+  - "visudo"
+
+  # Instalación no controlada
+  - "apt *"
+  - "apt-get *"
+  - "dpkg *"
+  - "pacman *"
+  - "yum *"
+  - "dnf *"
+  - "zypper *"
+
+  # Redirección peligrosa
+  - "* > *"
+  - "* >> *"
+  - "* | *"
+  - "* $(*)*"
+  - "* `*`*"
