@@ -3,7 +3,9 @@
 ## D-Bus Implementation Incompleta
 
 **ID:** DEBT-001
-**Status:** `acknowledged`
+**Status:** `resolved`
+**Resolved:** 2026-06-14
+**Resolution:** Migrado de `dasbus` a `dbus-next`. Implementado `_ensure_dbus_connection()` con `dbus-next` async MessageBus, `_on_action_invoked()` como signal handler para `ActionInvoked`, y `--print-id` en `notify-send` para obtener el ID real de notificación del servidor.
 **Severity:** High
 **Area:** `SwayNCNotificationSenderAdapter._wait_via_dbus`
 **Created:** 2026-06-14
@@ -42,5 +44,8 @@ Las notificaciones se envían correctamente mediante `notify-send` (CLI de SwayN
 
 Actualmente:
 - ✅ `send()`: Funcional - envía notificaciones vía `notify-send`
-- ❌ `wait_for_action()`: Limitado - usa timeout como fallback porque la escucha de D-Bus signals no está correctamente conectada
-- ⏳ `_wait_via_dbus()`: Implementación parcial - crea el proxy D-Bus pero no conecta los signals
+- ✅ `wait_for_action()`: Funcional - usa `dbus-next` para escuchar señales D-Bus reales de SwayNC
+- ✅ `_wait_via_dbus()`: Implementación completa - usa `asyncio.wait_for` con evento señalizado por `_on_action_invoked()`
+- ✅ `_ensure_dbus_connection()`: Nuevo - conexión async al session bus con `dbus-next`
+- ✅ `_on_action_invoked()`: Nuevo - signal handler para `ActionInvoked` que activa el evento asyncio
+- ⚠️ `send()`: Mejorado - ahora incluye `--print-id` para obtener el ID real de notificación del servidor

@@ -14,7 +14,7 @@ dependencies = [
     "pyyaml>=6.0",
     "aiofiles>=23.0.0",
     "edge-tts>=6.0.0",
-    "dasbus>=1.7",
+    "dbus-next>=0.2.3",
     "cachetools>=5.0.0",
 ]
 
