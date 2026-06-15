@@ -1,7 +1,7 @@
 # Shared Context - chappie-notification / initial-setup
 
 **Increment:** initial-setup  
-**Lifecycle Status:** `validator-review`  
+**Lifecycle Status:** `validated-not-executed`  
 **Created:** 2026-06-14  
 **Last Updated:** 2026-06-14  
 
@@ -9,7 +9,7 @@
 
 ## Current status
 
-- **Estado del incremento:** `awaiting-human-plan-approval`
+- **Estado del incremento:** `validated-not-executed`
 - **Fase actual:** Spec Validator otorgó veredicto `ready`. Todos los findings resueltos (7/7).
 - **Bloqueadores:** Ninguno.
 - **Alineación global:** Completa. system-landscape.md e integration-map.md sincronizados.
@@ -175,20 +175,18 @@ _N/A (primera versión de la spec)._
 
 ## Next action
 
-**Awaiting Human Plan Approval** — Spec Validator otorgó veredicto `ready`.
+**Task Decomposition** — El plan ha sido aprobado por el usuario.
 
 **Flujo SDD vigente:**
 1. ✅ Spec Validator validó y otorgó `verdict: ready` (2026-06-14).
-2. ⏳ Esperar aprobación humana del plan de implementación (`## Human Plan Approval: pending`).
-3. Tras aprobación humana, handoff a Task Decomposer.
-
-**Nota de documentación:** Planner debe eliminar el heading duplicado `## Resolved findings` (líneas 151-153) en la próxima iteración.
+2. ✅ Aprobación humana del plan de implementación recibida.
+3. ⏳ Handoff a Task Decomposer para crear el Task Board.
 
 ---
 
-## Human Plan Approval: pending
+## Human Plan Approval: approved_by_user
 
-_Pendiente de aprobación humana del plan de implementación._
+_Aprobado por el usuario._
 
 ---
 
